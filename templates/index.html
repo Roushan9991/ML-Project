@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Student Performance Predictor</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            background: linear-gradient(135deg,#0f172a,#1e293b,#334155);
+            color:white;
+            min-height:100vh;
+        }
+
+        /* Navbar */
+
+        .navbar{
+            width:100%;
+            padding:20px 8%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:700;
+            color:#38bdf8;
+        }
+
+        .nav-links{
+            display:flex;
+            gap:25px;
+        }
+
+        .nav-links a{
+            text-decoration:none;
+            color:white;
+            transition:0.3s;
+            font-weight:500;
+        }
+
+        .nav-links a:hover{
+            color:#38bdf8;
+        }
+
+        /* Hero Section */
+
+        .hero{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:70px 8%;
+            gap:50px;
+            flex-wrap:wrap;
+            min-height:85vh;
+        }
+
+        .hero-text{
+            flex:1;
+            min-width:300px;
+        }
+
+        .hero-text h1{
+            font-size:58px;
+            line-height:1.2;
+            margin-bottom:25px;
+        }
+
+        .hero-text h1 span{
+            color:#38bdf8;
+        }
+
+        .hero-text p{
+            font-size:18px;
+            line-height:1.9;
+            color:#d1d5db;
+            margin-bottom:35px;
+            max-width:650px;
+        }
+
+        .btn-group{
+            display:flex;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .btn{
+            padding:15px 30px;
+            border:none;
+            border-radius:14px;
+            font-size:16px;
+            cursor:pointer;
+            transition:0.3s;
+            text-decoration:none;
+            font-weight:600;
+        }
+
+        .primary-btn{
+            background:#38bdf8;
+            color:#0f172a;
+            box-shadow:0 8px 20px rgba(56,189,248,0.3);
+        }
+
+        .primary-btn:hover{
+            background:#0ea5e9;
+            transform:translateY(-4px);
+        }
+
+        .secondary-btn{
+            border:2px solid #38bdf8;
+            color:white;
+            background:transparent;
+        }
+
+        .secondary-btn:hover{
+            background:#38bdf8;
+            color:#0f172a;
+        }
+
+        /* Right Side Card */
+
+        .hero-image{
+            flex:1;
+            min-width:320px;
+            display:flex;
+            justify-content:center;
+        }
+
+        .card{
+            width:100%;
+            max-width:450px;
+            background:rgba(255,255,255,0.08);
+            border:1px solid rgba(255,255,255,0.12);
+            border-radius:28px;
+            padding:35px;
+            backdrop-filter:blur(14px);
+            box-shadow:0 10px 35px rgba(0,0,0,0.35);
+        }
+
+        .card h2{
+            margin-bottom:25px;
+            color:#38bdf8;
+            font-size:28px;
+        }
+
+        .feature{
+            margin-bottom:25px;
+        }
+
+        .feature h3{
+            margin-bottom:10px;
+            font-size:20px;
+        }
+
+        .feature p{
+            color:#d1d5db;
+            font-size:15px;
+            line-height:1.7;
+        }
+
+        /* Features Section */
+
+        .features-section{
+            padding:80px 8%;
+        }
+
+        .section-title{
+            text-align:center;
+            font-size:42px;
+            margin-bottom:60px;
+        }
+
+        .features-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .feature-box{
+            background:rgba(255,255,255,0.07);
+            padding:35px;
+            border-radius:22px;
+            transition:0.3s;
+            border:1px solid rgba(255,255,255,0.08);
+        }
+
+        .feature-box:hover{
+            transform:translateY(-8px);
+            background:rgba(56,189,248,0.15);
+        }
+
+        .feature-box h3{
+            margin-bottom:15px;
+            color:#38bdf8;
+            font-size:22px;
+        }
+
+        .feature-box p{
+            color:#d1d5db;
+            line-height:1.8;
+        }
+
+        /* Footer */
+
+        footer{
+            text-align:center;
+            padding:30px;
+            margin-top:40px;
+            color:#94a3b8;
+            border-top:1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive */
+
+        @media(max-width:900px){
+
+            .hero{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .btn-group{
+                justify-content:center;
+            }
+
+            .hero-text h1{
+                font-size:42px;
+            }
+
+            .nav-links{
+                display:none;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            ML Predictor
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="#features">Features</a>
+            <a href="/predict">Predict</a>
+        </div>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h1>
+                Predict Student
+                <span>Math Scores</span>
+                Using Machine Learning
+            </h1>
+
+            <p>
+                This Machine Learning project predicts student math performance
+                based on educational, demographic, and academic factors such as
+                reading score, writing score, parental education,
+                lunch type, and test preparation.
+                The project demonstrates an end-to-end ML pipeline with
+                preprocessing, model training, and deployment using Flask.
+            </p>
+
+            <div class="btn-group">
+
+                <!-- Main Prediction Button -->
+
+                <a href="/predict" class="btn primary-btn">
+                    Start Prediction
+                </a>
+
+                <a href="#features" class="btn secondary-btn">
+                    Explore Features
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Right Side Card -->
+
+        <div class="hero-image">
+
+            <div class="card">
+
+                <h2>Project Highlights</h2>
+
+                <div class="feature">
+                    <h3>📊 Smart Analytics</h3>
+                    <p>
+                        Uses student academic records and educational factors
+                        to generate predictive insights.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>🤖 Machine Learning Pipeline</h3>
+                    <p>
+                        Includes data ingestion, preprocessing,
+                        model training, and prediction workflow.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>⚡ Real-Time Prediction</h3>
+                    <p>
+                        Instantly predicts the expected math score
+                        using trained ML models.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Features Section -->
+
+    <section class="features-section" id="features">
+
+        <h2 class="section-title">
+            Why This Project?
+        </h2>
+
+        <div class="features-grid">
+
+            <div class="feature-box">
+                <h3>Student Performance Analysis</h3>
+                <p>
+                    Analyze how different educational and social
+                    factors influence student academic performance.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Modern Responsive UI</h3>
+                <p>
+                    Beautiful responsive frontend design
+                    compatible with desktop, tablet, and mobile devices.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Flask Integration</h3>
+                <p>
+                    Connected with Flask backend to collect data
+                    and display prediction results dynamically.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <h3>End-to-End ML Workflow</h3>
+                <p>
+                    Covers complete machine learning lifecycle from
+                    data preprocessing to deployment.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+        © 2026 Student Performance Predictor | Built using Flask & Machine Learning
+    </footer>
+
+</body>
+</html>
