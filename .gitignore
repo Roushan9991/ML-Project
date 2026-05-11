@@ -7,6 +7,13 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+ML_Project.egg-info/
+.venv-1/
+catboost_info/
+logs/
+artifacts/
+__pycache__/
+*.pyc
 catboost_info
 .Python
 build/
