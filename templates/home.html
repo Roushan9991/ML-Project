@@ -122,6 +122,25 @@
             color: #38bdf8;
         }
 
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
         @media(max-width:768px) {
             .container {
                 padding: 25px;
@@ -228,6 +247,10 @@
             <h2>Predicted Math Score: {{ results }}</h2>
         </div>
         {% endif %}
+
+        <div style="text-align: center;">
+            <a href="/" class="back-btn">Go back to Index</a>
+        </div>
 
     </div>
 
