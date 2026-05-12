@@ -1,0 +1,11 @@
+.venv-1/
+.git/
+catboost_info/
+logs/
+Notebook/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+artifacts/raw.csv
+artifacts/test.csv
+artifacts/train.csv
